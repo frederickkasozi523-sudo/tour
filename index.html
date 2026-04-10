@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wonder Tours and Travel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+
+    body { line-height:1.6; }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/1600x900/?travel');
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    header h1 { font-size: 3rem; }
+    header p { margin: 10px 0; }
+
+    .btn {
+      padding: 10px 20px;
+      background: #ff7e5f;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: rgba(0,0,0,0.7);
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      z-index: 1000;
+    }
+
+    nav ul { list-style: none; display: flex; }
+    nav ul li { margin: 0 10px; }
+    nav ul li a { color: white; text-decoration: none; }
+
+    section { padding: 60px 20px; }
+
+    .about, .services, .gallery, .contact {
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .services .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <h2>Wonder Tours</h2>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header id="home">
+  <h1>Explore the World with Wonder Tours</h1>
+  <p>Your journey begins here</p>
+  <button class="btn" onclick="scrollToSection('contact')">Book Now</button>
+</header>
+
+<section id="about" class="about">
+  <h2>About Us</h2>
+  <p>Wonder Tours and Travel is your trusted partner in exploring the world. We provide unforgettable travel experiences, both local and international, tailored to your needs.</p>
+</section>
+
+<section id="services" class="services">
+  <h2>Our Services</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Tour Packages</h3>
+      <p>Explore amazing destinations with our curated packages.</p>
+    </div>
+    <div class="card">
+      <h3>Flight Booking</h3>
+      <p>Affordable and convenient flight reservations.</p>
+    </div>
+    <div class="card">
+      <h3>Hotel Reservations</h3>
+      <p>Comfortable stays at the best hotels worldwide.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <h2>Gallery</h2>
+  <img src="https://source.unsplash.com/300x200/?beach" alt="">
+  <img src="https://source.unsplash.com/300x200/?mountains" alt="">
+  <img src="https://source.unsplash.com/300x200/?city" alt="">
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <form onsubmit="submitForm(event)">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button class="btn" type="submit">Send Message</button>
+  </form>
+  <p id="formMessage"></p>
+</section>
+
+<footer>
+  <p>© 2026 Wonder Tours and Travel. All rights reserved.</p>
+</footer>
+
+<script>
+  function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function submitForm(e) {
+    e.preventDefault();
+    document.getElementById('formMessage').innerText = "Message sent successfully!";
+  }
+</script>
+
+</body>
+</html>
